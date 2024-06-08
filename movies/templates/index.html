@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>title</th>
+                <th>category</th>
+                <th>stock</th>
+                <th>daily rate</th>
+                </tr>
+                </thead>
+                <tbody>
+                    {% for movie in movies %}
+                    <tr>
+                        <td>
+                            <a href="/movies/{{ movie.id }}/">{{movie.title}}</a>
+                        </td>
+                        <td>{{movie.category}}</td>
+                        <td>{{movie.number_in_stock}}</td>
+                        <td>{{movie.daily_rate}}</td>
+                        </tr>
+                        
+                        {% endfor %}
+                        </tbody>
+                        </table>
+                {% endblock %}
